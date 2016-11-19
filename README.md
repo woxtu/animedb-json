@@ -6,8 +6,14 @@ Anime DB formatted as JSON.
 
 https://woxtu.github.io/animedb-json/animedb.json
 
-See the following links for details:
+## Reference
 
 - [anilogia/animedb: 約100年に渡るアニメ作品リストデータベース - GitHub](https://github.com/anilogia/animedb)
 
 - [100年分のアニメ作品リストを Excel データで公開した - 本しゃぶり](http://honeshabri.hatenablog.com/entry/animedb_shared)
+
+## License
+
+Copyright (c) 2016 woxtu
+
+Licensed under the MIT license.
