@@ -1,0 +1,10 @@
+{
+  "name": "animedb-json",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
+    "js-yaml": "^3.7.0",
+    "jsonlint": "^1.6.2"
+  }
+}

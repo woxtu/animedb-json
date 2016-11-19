@@ -1,0 +1,32 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - GH_USER_NAME="woxtu"
+    - GH_USER_EMAIL="woxtup@gmail.com"
+
+install:
+  - npm install
+
+before_script:
+  - git submodule update --init
+
+script:
+  - mkdir dist
+  - $(npm bin)/js-yaml animedb/animedb.yml > dist/animedb.json
+  - cat dist/animedb.json | $(npm bin)/jsonlint 1>/dev/null 
+
+after_success:
+  - $(npm bin)/set-up-ssh --key "$encrypted_6a50b3137f1b_key"
+                          --iv "$encrypted_6a50b3137f1b_iv"
+                          --path-encrypted-key ".travis/github_deploy_key.enc"
+
+  - $(npm bin)/update-branch --commands "true"
+                             --commit-message "Publish JSON file [skip ci]"
+                             --directory "dist"
+                             --distribution-branch "gh-pages"
+                             --source-branch "master"
