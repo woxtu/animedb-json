@@ -1,0 +1,3 @@
+[submodule "animedb"]
+	path = animedb
+	url = https://github.com/anilogia/animedb
