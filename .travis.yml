@@ -4,11 +4,6 @@ branches:
   only:
     - master
 
-env:
-  global:
-    - GH_USER_NAME="woxtu"
-    - GH_USER_EMAIL="woxtup@gmail.com"
-
 install:
   - npm install
 
@@ -18,7 +13,7 @@ before_script:
 script:
   - mkdir dist
   - $(npm bin)/js-yaml animedb/animedb.yml > dist/animedb.json
-  - cat dist/animedb.json | $(npm bin)/jsonlint 1>/dev/null 
+  - cat dist/animedb.json | $(npm bin)/jsonlint 1>/dev/null
 
 after_success:
   - $(npm bin)/set-up-ssh --key "$encrypted_6a50b3137f1b_key"
